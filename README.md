@@ -4,7 +4,7 @@ This application adds touch controls to DirectX games.
 
 Usage
 -----
-TouchEnabler.exe -> Select application exe -> Launch
+TouchEnabler.exe > Select application exe > Launch
 
 The target application or game needs a TouchEnabler script (.tes) located in the same directory with the same name. For example, for Need for Speed Underground 2, you'd need a speed2.tes script located in C:\Program Files (x86)\EA GAMES\Need for Speed Underground 2\ or wherever the game is installed.
 
@@ -65,14 +65,14 @@ int OnPointerDown(int x, int y)
 	{
 		PressKey(0x01); // Press ESC key, see key codes below.
 		SetInfoText("Esc button being pressed");
-		return 0; // We'll set 0 as the code belonging to our button.
+		return 0; // We'll set 0 as the id belonging to our button.
 	}
 	return -1; // Event was outside button, then we're not gonna process it.
 }
 
 void OnPointerUp(int id)
 {
-  	if(id == 0) // We got 0, so that means our button was released.
+  	if(id == 0) // We got 0, so that means our touch button was released.
   	{
 		ReleaseKey(0x01); // Release ESC key
 		SetInfoText("No button being pressed");
@@ -91,7 +91,7 @@ Roadmap
 Known bugs, limitations
 -----------------------
 * BUG: The game can't be minimized, alt-tabbed or device reset (such as changing the resolution or visual settings) as it is gonna crash due to the Direct3D hook code.
-* BUG: The TouchEnabler application must be restarted after launching a game as it won't work in the successive attempts.
+* BUG: The TouchEnabler application must be restarted after launching a game as it won't work in successive attempts.
 * Limitation: Only Direct3D 9 is being supported at this time.
 * Limitation: Sprite textures and the .TES script can only be located in the same directory as the target executable.
 
