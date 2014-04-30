@@ -35,7 +35,6 @@ These functions and variables are provided by the host application to be used wi
 * **void echo(string)** Prints a string into the touchenabler.log file.
 * **bool EnableMouseInPointer(bool)** Wrapper for the WinAPI function.
 * **void exit(int)** Wrapper for the exit function. Quits the target application.
-
 * **const uint dpiScaleX, dpiScaleY** Number of pixels per logical inch along the screen height.
 
 Example
