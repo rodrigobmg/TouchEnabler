@@ -1,0 +1,55 @@
+- 01:57:01.000 INFO: Script C:\Users\Meow\Desktop\touchenabler\bin\Release\test.tes loaded successfully.
+- 01:57:01.016 INFO: ASmsg: C:\Users\Meow\Desktop\touchenabler\bin\Release\test.tes, row: 65. Compiling int OnPointerDown(int, int)
+- 01:57:01.016 INFO: ASmsg: C:\Users\Meow\Desktop\touchenabler\bin\Release\test.tes, row: 67. Float value truncated in implicit conversion to integer
+- 01:57:01.016 INFO: ASmsg: C:\Users\Meow\Desktop\touchenabler\bin\Release\test.tes, row: 68. Float value truncated in implicit conversion to integer
+- 01:57:01.032 ERROR: vJoy driver not enabled: Failed Getting vJoy attributes.
+- 01:57:01.032 ERROR: vJoy Device 1 is not installed or disabled
+- 01:57:01.032 INFO: Acquired: vJoy device number 1
+- 01:57:01.032 INFO: onload
+- 01:57:02.532 INFO: Key press: 200
+- 01:57:02.532 ERROR: OnPointerDown returned 0
+- 01:57:02.610 INFO: onpointerup
+- 01:57:02.610 INFO: Key release: 200
+- 01:57:03.157 INFO: Key press: 200
+- 01:57:03.157 ERROR: OnPointerDown returned 0
+- 01:57:03.610 INFO: onpointerup
+- 01:57:03.610 INFO: Key release: 200
+- 01:57:04.516 INFO: Key press: 203
+- 01:57:04.516 ERROR: OnPointerDown returned 3
+- 01:57:05.172 INFO: onpointerup
+- 01:57:05.172 INFO: Key release: 203
+- 01:57:05.547 INFO: Key press: 205
+- 01:57:05.547 ERROR: OnPointerDown returned 1
+- 01:57:06.891 INFO: onpointerup
+- 01:57:06.891 INFO: Key release: 205
+- 01:57:06.297 INFO: Key press: 208
+- 01:57:06.297 ERROR: OnPointerDown returned 2
+- 01:57:06.532 INFO: onpointerup
+- 01:57:06.532 INFO: Key release: 208
+- 01:57:08.172 INFO: Key press: 200
+- 01:57:08.188 ERROR: OnPointerDown returned 0
+- 01:57:08.625 INFO: Key press: 208
+- 01:57:08.625 ERROR: OnPointerDown returned 2
+- 01:57:09.938 INFO: onpointerup
+- 01:57:09.938 INFO: Key release: 200
+- 01:57:09.938 INFO: Key release: 208
+- 01:57:09.313 INFO: Key press: 208
+- 01:57:09.313 ERROR: OnPointerDown returned 2
+- 01:57:10.844 INFO: onpointerup
+- 01:57:10.844 INFO: Key release: 208
+- 01:57:10.704 INFO: onpointerup
+- 01:57:11.000 INFO: Key press: 200
+- 01:57:11.000 ERROR: OnPointerDown returned 0
+- 01:57:11.610 INFO: Key press: 208
+- 01:57:11.610 ERROR: OnPointerDown returned 2
+- 01:57:12.782 INFO: onpointerup
+- 01:57:12.782 INFO: Key release: 200
+- 01:57:12.782 INFO: Key release: 208
+- 01:57:12.282 INFO: Key press: 208
+- 01:57:12.282 ERROR: OnPointerDown returned 2
+- 01:57:12.438 INFO: onpointerup
+- 01:57:12.438 INFO: Key release: 208
+- 01:57:12.532 ERROR: The script must have the function 'OnSecondaryTap'.
+- 01:57:12.532 INFO: onpointerup
+- 01:57:19.141 ERROR: OnPointerDown returned -1
+- 01:57:19.657 ERROR: OnPointerDown returned -1

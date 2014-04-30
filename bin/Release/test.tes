@@ -1,0 +1,151 @@
+int x1 = 974;
+int y1 = 538;
+
+int x2 = 57;
+int y2 = 538;
+
+int x3 = 974;
+int y3 = 652;
+
+int x4 = 57;
+int y4 = 652;
+
+int x5 = 57;
+int y5 = 57;
+
+int x6 = 171;
+int y6 = 57;
+
+void OnLoad()
+{
+	echo("onload");
+	
+	AddSprite("button.png", 114, 114); // Load our button texture
+	
+	AddTouchHandler(); // Add 6 touch handlers, one for each button
+	AddTouchHandler();
+	AddTouchHandler();
+	AddTouchHandler();
+	AddTouchHandler();
+	AddTouchHandler();
+	// EnableMouseInPointer(true);
+}
+
+void OnRender()
+{
+	// Draw our buttons
+	DrawSprite(0, x1 - 57, y1 - 57, 255, 255, 255, 155);
+	DrawSprite(0, x2 - 57, y2 - 57, 255, 255, 255, 155);
+	DrawSprite(0, x3 - 57, y3 - 57, 255, 255, 255, 155);
+	DrawSprite(0, x4 - 57, y4 - 57, 255, 255, 255, 155);
+	DrawSprite(0, x5 - 57, y5 - 57, 255, 255, 255, 155);
+	DrawSprite(0, x6 - 57, y6 - 57, 255, 255, 255, 155);
+}
+
+void OnTap()
+{
+	// if(btnId == 5)
+	// {
+		// ReleaseKey(0x01);
+	// }
+	// else if(btnId == 6)
+	// {
+		// PressKey(0x1C);
+		// ReleaseKey(0x1C);
+	// }
+}
+
+
+int OnPointerDown(int x, int y)
+{
+	// Get tap coordinates
+	x =  (x * 96.0f / dpiScaleX);
+	y =  (y * 96.0f / dpiScaleY);
+	
+	if(PointInCircle(x1, y1, 55, x, y))
+	{
+		PressKey(0xC8);
+		SetInfoText("Up button being pressed");
+		return 0;
+	}
+	else if(PointInCircle(x2, y2, 55, x, y))
+	{
+		PressKey(0xCD);
+		SetInfoText("Right button being pressed");
+		return 1;
+	}
+	else if(PointInCircle(x3, y3, 55, x, y))
+	{
+		PressKey(0xD0);
+		SetInfoText("Down button being pressed");
+		return 2;
+	}
+	else if(PointInCircle(x4, y4, 55, x, y))
+	{
+		PressKey(0xCB);
+		SetInfoText("Left button being pressed");
+		return 3;
+	}
+	else if(PointInCircle(x5, y5, 57, x, y))
+	{
+		PressKey(0x01);
+		SetInfoText("Esc button being pressed");
+		return 4;
+	}	
+	else if(PointInCircle(x6, y6, 57, x, y))
+	{
+		PressKey(0x1C);
+		SetInfoText("Enter button being pressed");
+		return 5;
+	}
+		
+	return -1;
+}
+
+void OnPointerUp(int id)
+{
+	echo("onpointerup");
+	
+	if(id == 0)
+	{
+		ReleaseKey(0xC8);
+		SetInfoText("No button being pressed");
+	}
+	else if(id == 1)
+	{
+		ReleaseKey(0xCD);
+		SetInfoText("No button being pressed");
+	}
+	else if(id == 2)
+	{
+		ReleaseKey(0xD0);
+		SetInfoText("No button being pressed");
+	}
+	else if(id == 3)
+	{
+		ReleaseKey(0xCB);
+		SetInfoText("No button being pressed");
+	}
+	else if(id == 4)
+	{
+		ReleaseKey(0x01);
+		SetInfoText("No button being pressed");
+	}
+	else if(id == 5)
+	{
+		ReleaseKey(0x1C);
+		SetInfoText("No button being pressed");
+	}
+}
+void OnManipulation(float tx, float ty, float rot, float scale)
+{
+	/* rotation += rot;
+	if(inObj)
+	{
+		posX = posX_O + (tx * 96.0f / dpiScaleX);
+		posY = posY_O + (ty * 96.0f / dpiScaleY);
+	}
+	
+	echo(tx + ", " + ty  + ", " + posX  + ", " + scale);
+	echo("onmanipulation"); */
+}

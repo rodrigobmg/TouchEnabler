@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hook_d3d9", "hook_d3d9\hook_d3d9.vcproj", "{027FF6BC-7AC0-4041-B0EC-694C947A24DA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "launcher", "launcher\launcher.vcproj", "{B170E208-783F-492F-A374-2BB83948F0B6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "test\test.vcproj", "{98FD6052-A027-40D0-963F-B1770400C511}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{027FF6BC-7AC0-4041-B0EC-694C947A24DA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{027FF6BC-7AC0-4041-B0EC-694C947A24DA}.Debug|Win32.Build.0 = Debug|Win32
+		{027FF6BC-7AC0-4041-B0EC-694C947A24DA}.Release|Win32.ActiveCfg = Release|Win32
+		{027FF6BC-7AC0-4041-B0EC-694C947A24DA}.Release|Win32.Build.0 = Release|Win32
+		{B170E208-783F-492F-A374-2BB83948F0B6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B170E208-783F-492F-A374-2BB83948F0B6}.Debug|Win32.Build.0 = Debug|Win32
+		{B170E208-783F-492F-A374-2BB83948F0B6}.Release|Win32.ActiveCfg = Release|Win32
+		{B170E208-783F-492F-A374-2BB83948F0B6}.Release|Win32.Build.0 = Release|Win32
+		{98FD6052-A027-40D0-963F-B1770400C511}.Debug|Win32.ActiveCfg = Debug|Win32
+		{98FD6052-A027-40D0-963F-B1770400C511}.Debug|Win32.Build.0 = Debug|Win32
+		{98FD6052-A027-40D0-963F-B1770400C511}.Release|Win32.ActiveCfg = Release|Win32
+		{98FD6052-A027-40D0-963F-B1770400C511}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
