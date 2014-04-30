@@ -12,7 +12,7 @@ The target application or game needs a TouchEnabler script (.tes) located in the
 
 * **void OnLoad()** the UI textures should be loaded in this function, as well as setting any parameters such as enabling the mouse as touch input (mostly for debugging purposes). This function is only called once, at the beggining of execution of the script.
 * **void OnRender()** Any DrawSprite calls should be located here.
-* **int OnPointerDown(int x, int y)** This function is called whenever the user taps or starts a manipulation on the screen. The event coordinates are sent as the parameters. The script should return -1 if the event is not going to be processed, otherwise it should return an id which is then used as a parameter for the OnPointerUp and OnManipulation functions to which UI element was being interacted with.
+* **int OnPointerDown(int x, int y)** This function is called whenever the user taps or starts a manipulation on the screen. The event coordinates are sent as the parameters. The script should return -1 if the event is not going to be processed, otherwise it should return an id which is then used as a parameter for the OnPointerUp and OnManipulation functions to retrieve the UI element that was being interacted with.
 * **void OnPointerUp(int id)** This is called when the user stops pressing or interacting with an element.
 
 Other functions that can be implemented:
@@ -35,7 +35,7 @@ These functions and variables are provided by the host application to be used wi
 * **void echo(string)** Prints a string into the touchenabler.log file.
 * **bool EnableMouseInPointer(bool)** Wrapper for the WinAPI function.
 * **void exit(int)** Wrapper for the exit function. Quits the target application.
-* **const uint dpiScaleX, dpiScaleY** Number of pixels per logical inch along the screen height.
+* **const uint dpiScaleX, dpiScaleY** Number of pixels per logical inch.
 
 Example
 -------
@@ -60,7 +60,7 @@ void OnRender()
 
 int OnPointerDown(int x, int y)
 {
-  	if(PointInCircle(x1, y1, 57, x, y))
+  	if(PointInCircle(x1 + 57, y1 + 57, 57, x, y))
 	{
 		PressKey(0x01); // Press ESC key, see key codes below.
 		SetInfoText("Esc button being pressed");
