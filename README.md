@@ -1,49 +1,51 @@
 TouchEnabler
 ============
+![alt text](https://raw.githubusercontent.com/lenny93/TouchEnabler/master/bin/Release/touchenabler.png "TouchEnabler")
 
 This application adds touch controls to DirectX games.
 
 Usage
-=====
+-----
 TouchEnabler.exe -> Select application exe -> Launch
 
 The target application or game needs a TouchEnabler script (.tes) located in the same directory with the same name. For example, for Need for Speed Underground 2, you'd need a speed2.tes script located in C:\Program Files (x86)\EA GAMES\Need for Speed Underground 2\ or wherever the game is installed.
 
 .tes scripts have a C-like syntax, and they are used to have different layouts and controller behaviors for each game. Each script must implement 4 functions:
 
-void OnLoad(): the UI textures should be loaded in this function, as well as setting any parameters such as enabling the mouse as touch input (mostly for debugging purposes). This function is only called once, at the beggining of execution of the script.
+**void OnLoad()** the UI textures should be loaded in this function, as well as setting any parameters such as enabling the mouse as touch input (mostly for debugging purposes). This function is only called once, at the beggining of execution of the script.
 
-void OnRender(): Any DrawSprite calls should be located here.
+**void OnRender()** Any DrawSprite calls should be located here.
 
-int OnPointerDown(int x, int y): This function is called whenever the user taps or starts a manipulation on the screen. The event coordinates are sent as the parameters. The script should return -1 if the event is not going to be processed, otherwise it should return an id which is then used as a parameter for the OnPointerUp and OnManipulation functions to which UI element was being interacted with.
+**int OnPointerDown(int x, int y)** This function is called whenever the user taps or starts a manipulation on the screen. The event coordinates are sent as the parameters. The script should return -1 if the event is not going to be processed, otherwise it should return an id which is then used as a parameter for the OnPointerUp and OnManipulation functions to which UI element was being interacted with.
 
-void OnPointerUp(int id): This is called when the user stops pressing or interacting with an element.
+**void OnPointerUp(int id)** This is called when the user stops pressing or interacting with an element.
 
 Other functions that can be implemented:
-void OnManipulation(int id, float tx, float ty, float rot, float scale): This function is called when the application detects a gesture such as pan, pinch to zoom, etc.
+**void OnManipulation(int id, float tx, float ty, float rot, float scale)** This function is called when the application detects a gesture such as pan, pinch to zoom, etc.
 
 API
-===
+---
 These functions and variables are provided by the host application to be used within the scripts:
 
-void SetInfoText(string): This sets a debugging text shown in the upper-left corner of the window.
-void MouseMove(int x, int y): This moves the cursor to the specified absolute coordinates.
-void MouseClick(): Triggers a left mouse button click.
-void AddTouchHandler(): (important) Adds a touch handler, there should be one for each UI element, i.e buttons.
-void PressKey(int): Sets the specified key code as being pressed. (see key codes below)
-void ReleaseKey(int): Releases the specified key code.
-bool PointInCircle(float circle_x, float circle_y, float radius, float point_x, float point_y): Helper function for circle-shaped UI elements
-int AddSprite(string texture_file, int width, int height): Load a texture to be used as a sprite. texture_file can be an absolute path or one relative to the target application. Returns the sprite id.
-void DrawSprite(uint spite_id, float x, float y, float r, float g, float b, float a): (important) Draws the sprite at the specified coordinates (top-left system) and RGBA color.
-void echo(string): Prints a string into the touchenabler.log file.
-bool EnableMouseInPointer(bool): Wrapper for the WinAPI function.
-void exit(int): Wrapper for the exit function. Quits the target application.
+***void SetInfoText(string)** This sets a debugging text shown in the upper-left corner of the window.
+***void MouseMove(int x, int y)** This moves the cursor to the specified absolute coordinates.
+***void MouseClick()** Triggers a left mouse button click.
+***void AddTouchHandler()** (important) Adds a touch handler, there should be one for each UI element, i.e buttons.
+***void PressKey(int)** Sets the specified key code as being pressed. (see key codes below)
+***void ReleaseKey(int)** Releases the specified key code.
+***bool PointInCircle(float circle_x, float circle_y, float radius, float point_x, float point_y)** Helper function for circle-shaped UI elements
+***int AddSprite(string texture_file, int width, int height)** Load a texture to be used as a sprite. texture_file can be an absolute path or one relative to the target application. Returns the sprite id.
+***void DrawSprite(uint spite_id, float x, float y, float r, float g, float b, float a)** (important) Draws the sprite at the specified coordinates (top-left system) and RGBA color.
+***void echo(string)** Prints a string into the touchenabler.log file.
+***bool EnableMouseInPointer(bool)** Wrapper for the WinAPI function.
+***void exit(int)** Wrapper for the exit function. Quits the target application.
 
-const uint dpiScaleX, dpiScaleY: Number of pixels per logical inch along the screen height.
+***const uint dpiScaleX, dpiScaleY** Number of pixels per logical inch along the screen height.
 
 Example
-=======
+-------
 
+```cpp
 ////////////////////////////
 //////// sample.tes ////////
 ////////////////////////////
@@ -82,23 +84,28 @@ void OnPointerUp(int id)
 }
 ////////////////////////////
 ////////////////////////////
+```
 
 Roadmap
-=======
+-------
 *Complete vJoystick implementation as it is better suited for FPS and racing games.
 *Add Direct3D 7,8,10,11 support
 *Visual UI editor
 
 Known bugs, limitations
-=======================
+-----------------------
 *BUG: The game can't be minimized, alt-tabbed or device reset (such as changing the resolution or visual settings) as it is gonna crash due to the Direct3D hook code.
 *BUG: The TouchEnabler application must be restarted after launching a game as it won't work in the successive attempts.
 *Limitation: Only Direct3D 9 is being supported at this time.
 *Limitation: Sprite textures and the .TES script can only be located in the same directory as the target executable.
 
+License
+-------
+See LICENSE file.
 
 DirectX keyboard scan codes
-===========================
+---------------------------
+```cpp
 #define DIK_ESCAPE          0x01
 #define DIK_1               0x02
 #define DIK_2               0x03
@@ -184,4 +191,4 @@ DirectX keyboard scan codes
 #define DIK_DECIMAL         0x53    /* . on numeric keypad */
 #define DIK_F11             0x57
 #define DIK_F12             0x58
-
+```
