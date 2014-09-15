@@ -281,7 +281,7 @@ void CommonAPI::RegisterAPI()
 	//engine->RegisterGlobalFunction("bool SetAxis(int64 x, uint y, uint z)", asFUNCTION(SetAxis), asCALL_CDECL);
 	engine->RegisterGlobalFunction("void ShowMessage(const string &in)", asFUNCTION(ShowMessage), asCALL_CDECL);
 	engine->RegisterGlobalFunction("void echo(const string &in)", asFUNCTION(MessageLog), asCALL_CDECL);
-	engine->RegisterGlobalFunction("bool EnableMouseInPointer(bool)", asFUNCTION(EnableMouseInPointer), asCALL_CDECL);
+	engine->RegisterGlobalFunction("bool EnableMouseInPointer(bool)", asFUNCTION(EnableMouseInPointer), asCALL_STDCALL);
 	engine->RegisterGlobalFunction("void exit(int)", asFUNCTION(exit), asCALL_CDECL);
 
 	HDC hdc = GetDC(NULL);
